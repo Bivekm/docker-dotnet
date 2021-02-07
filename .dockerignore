@@ -1,0 +1,10 @@
+**/.dockerignore
+**/.git
+**/.gitignore
+**/.project
+**/.settings
+**/.vs
+**/.vscode
+**/*.*proj.user
+**/bin
+**/obj
