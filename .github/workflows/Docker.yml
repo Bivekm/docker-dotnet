@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./docker-dotnet/Docker/Dockerfile
+          file: ./docker-dotnet/Dockerfile
           push: true
           tags: user/app:latest
       -
