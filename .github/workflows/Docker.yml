@@ -22,7 +22,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ubuntu
           key: ${{ secrets.SSH_CONNECT }}
-          script: runDocker.sh
+          script: bash runDocker.sh
       -     
         name: Cache Docker layers
         uses: actions/cache@v2
