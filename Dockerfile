@@ -7,10 +7,10 @@ WORKDIR /src
 COPY *.csproj ./
 RUN dotnet restore
 COPY . ./
-RUN dotnet build "dockerDotnet.csproj" -c Release -o /app/build
+RUN dotnet build -c Release
 
 FROM build AS publish
-RUN dotnet publish "dockerDotnet.csproj" -c Release -o /app/publish
+RUN dotnet publish -c Release
 
 FROM base AS final
 WORKDIR /app
