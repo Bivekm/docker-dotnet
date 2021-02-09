@@ -16,14 +16,13 @@ jobs:
         id: buildx
         uses: docker/setup-buildx-action@v1
       -
-         name: Remote desktop
-         uses: garygrossgarten/github-action-ssh@release
-         with:
-            command: ls -a
-            host: ${{ secrets.SSH_HOST }}
-            privateKey: ${{ secrets.SSH_CONNECT}}
-            run: |
-              bash runDocker.sh
+        name: SSH remote run
+        uses: Boberneprotiv/ssh-remove-run@v1
+        with:
+          user: "Ubuntu"
+          host:  ${{ secrets.SSH_HOST }}
+          private-key-path: ${{ secrets.SSH_CONNECT }}
+          run: bash runDocker.sh
       -     
         name: Cache Docker layers
         uses: actions/cache@v2
