@@ -22,9 +22,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ubuntu
           key: ${{ secrets.SSH_CONNECT }}
-          script: |
-            docker pull bivekmali/dotnet:new
-            docker run -i -p 80:80 bivekmali/dotnet:new
+          script: bash runDocker.sh
       -     
         name: Cache Docker layers
         uses: actions/cache@v2
