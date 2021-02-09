@@ -14,5 +14,5 @@ RUN dotnet publish -c Release
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /src/bin/Release/netcoreapp3.1/publish/
+COPY --from=publish /src/bin/Release/netcoreapp3.1/publish .
 ENTRYPOINT ["dotnet", "dockerDotnet.dll"]
