@@ -19,7 +19,7 @@ jobs:
         name: SSH remote run
         uses: Boberneprotiv/ssh-remove-run@v1
         with:
-          user: "Ubuntu"
+          user: Ubuntu
           host:  ${{ secrets.SSH_HOST }}
           private-key-path: ${{ secrets.SSH_CONNECT }}
           run: bash runDocker.sh
